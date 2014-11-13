@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'cowsay'
 
+def default_saying
+  "What should they say?"
+end
+
 get '/' do
-  [ "<pre>", Cowsay.say(Time.now.to_s), "</pre>" ].join("\n")
+  erb :index, locals: { output:  Cowsay.say(default_saying) }
 end
