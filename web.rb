@@ -2,7 +2,7 @@ require 'sinatra'
 require 'cowsay'
 
 def default_saying
-  "What should they say?"
+  Time.now.to_s
 end
 
 get '/' do
